@@ -37,8 +37,7 @@ public class SQSService {
 
     public String sendEmailMessage(String messageBody) {
         try (SqsClient sqsClient = SqsClient.builder()
-                .region(Region.EU_CENTRAL_1) // Replace with your region
-                .credentialsProvider(StaticCredentialsProvider.create(awsSessionCredentials))  // Use default credentials (SSO included)
+                .region(Region.EU_CENTRAL_1)
                 .build()) {
 
             SendMessageRequest sendMessageRequest = SendMessageRequest.builder()
