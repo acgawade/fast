@@ -11,15 +11,11 @@ import software.amazon.awssdk.services.sqs.model.SendMessageResponse;
 
 @Service
 public class SQSService {
-
-    @Autowired
-    AwsSessionCredentials awsSessionCredentials;
     private static final String QUEUE_URL = "https://sqs.eu-central-1.amazonaws.com/250738637992/email_queue"; // Replace with your SQS Queue URL
 
     public String sendSqsMessage(String messageBody) {
         try (SqsClient sqsClient = SqsClient.builder()
-                .region(Region.EU_CENTRAL_1) // Replace with your region
-                .credentialsProvider(StaticCredentialsProvider.create(awsSessionCredentials))  // Use default credentials (SSO included)
+                .region(Region.EU_CENTRAL_1)
                 .build()) {
 
             SendMessageRequest sendMessageRequest = SendMessageRequest.builder()
