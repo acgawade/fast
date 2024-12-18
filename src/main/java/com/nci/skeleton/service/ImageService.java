@@ -23,8 +23,6 @@ public class ImageService {
     @Value("${s3BucketName}")
     private String BUCKET;
     @Autowired
-    AwsSessionCredentials awsSessionCredentials;
-    @Autowired
     BookingService bookingService;
 
     private String propertyId;
