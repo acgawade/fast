@@ -31,7 +31,7 @@ public class SQSService {
 
         } catch (Exception e) {
             // Handle the exception or rethrow it
-            throw new RuntimeException("Failed to send message to SQS", e);
+            throw new RuntimeException("Failed to send message to SQS test", e);
         }
     }
 
